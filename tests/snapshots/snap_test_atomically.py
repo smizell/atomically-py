@@ -172,6 +172,7 @@ snapshots['test_example_function[basic.yml] basic'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'List Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -219,6 +220,7 @@ snapshots['test_example_function[basic.yml] basic'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Create Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -272,6 +274,7 @@ snapshots['test_example_function[basic.yml] basic'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Delete Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -330,6 +333,7 @@ snapshots['test_example_function[basic.yml] basic'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Read Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -397,6 +401,7 @@ snapshots['test_example_function[basic.yml] basic'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Update Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -602,6 +607,7 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'List Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -649,6 +655,7 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Create Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -708,6 +715,7 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Sort Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -761,6 +769,7 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Delete Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -819,6 +828,7 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Read Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -886,6 +896,7 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Update Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -946,6 +957,7 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
                         'description': 'Server error'
                     }
                 },
+                'summary': 'Archive Customer',
                 'tags': [
                     'Customer'
                 ]
@@ -961,9 +973,9 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
         'stacks': {
             'Customer': {
                 'custom': {
-                    'archive': {
+                    'Archive': {
                     },
-                    'sort': {
+                    'Sort': {
                         'requestSchema': {
                             '$ref': '#/components/schemas/CustomerSort'
                         },

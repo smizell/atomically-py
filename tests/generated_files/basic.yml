@@ -112,6 +112,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Server error
+      summary: List Customer
       tags:
       - Customer
     post:
@@ -140,6 +141,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Server error
+      summary: Create Customer
       tags:
       - Customer
   /customers/{customer_id}:
@@ -172,6 +174,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Server error
+      summary: Delete Customer
       tags:
       - Customer
     get:
@@ -207,6 +210,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Server error
+      summary: Read Customer
       tags:
       - Customer
     put:
@@ -247,6 +251,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Server error
+      summary: Update Customer
       tags:
       - Customer
 tags:

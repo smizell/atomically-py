@@ -52,7 +52,10 @@ class AtomicGenerator:
                 create_http_method = "post"
                 create_operation_id = f"create_{stack.computer_name()}"
                 create_operation = openapi.add_operation(
-                    create_url, create_http_method, create_operation_id
+                    create_url,
+                    create_http_method,
+                    create_operation_id,
+                    f"Create {stack.name}",
                 )
                 create_operation.add_tag(tag_name)
                 create_operation.add_request_body_json_schema(item_schema_ref)
@@ -68,7 +71,7 @@ class AtomicGenerator:
                 read_http_method = "get"
                 read_operation_id = f"read_{stack.computer_name()}"
                 read_operation = openapi.add_operation(
-                    read_url, read_http_method, read_operation_id
+                    read_url, read_http_method, read_operation_id, f"Read {stack.name}"
                 )
                 read_operation.add_tag(tag_name)
                 read_operation.add_response_json_schema(200, "OK", item_schema_ref)
@@ -82,7 +85,10 @@ class AtomicGenerator:
                 update_http_method = "put"
                 update_operation_id = f"update_{stack.computer_name()}"
                 update_operation = openapi.add_operation(
-                    update_url, update_http_method, update_operation_id
+                    update_url,
+                    update_http_method,
+                    update_operation_id,
+                    f"Update {stack.name}",
                 )
                 update_operation.add_tag(tag_name)
                 update_operation.add_request_body_json_schema(item_schema_ref)
@@ -97,7 +103,10 @@ class AtomicGenerator:
                 delete_http_method = "delete"
                 delete_operation_id = f"delete_{stack.computer_name()}"
                 delete_operation = openapi.add_operation(
-                    delete_url, delete_http_method, delete_operation_id
+                    delete_url,
+                    delete_http_method,
+                    delete_operation_id,
+                    f"Delete {stack.name}",
                 )
                 delete_operation.add_tag(tag_name)
                 delete_operation.add_response(204, "No content")
@@ -108,7 +117,7 @@ class AtomicGenerator:
                 list_http_method = "get"
                 list_operation_id = f"list_{stack.computer_name()}"
                 list_operation = openapi.add_operation(
-                    list_url, list_http_method, list_operation_id
+                    list_url, list_http_method, list_operation_id, f"List {stack.name}"
                 )
                 list_operation.add_tag(tag_name)
                 list_operation.add_response_json_schema(
@@ -136,6 +145,7 @@ class AtomicGenerator:
                     custom_operation_url,
                     custom_operation_http_method,
                     custom_operation_operation_id,
+                    f"{custom_operation.name} {stack.name}",
                 )
                 operation.add_tag(tag_name)
                 if path_parameter_name:
@@ -308,7 +318,7 @@ class AtomicCustomOperation:
         return self.content.get("requestSchema")
 
     def url_path(self):
-        return inflection.dasherize(self.name)
+        return inflection.dasherize(self.name).lower()
 
     def computer_name(self):
         return inflection.underscore(self.name)
@@ -372,13 +382,15 @@ class OpenAPI:
         schema_name = json_pointer.parts[-1]
         return self.content["components"]["schemas"][schema_name]
 
-    def add_operation(self, url, http_method, operation_id):
+    def add_operation(self, url, http_method, operation_id, summary=None):
         if "paths" not in self.content:
             self.content["paths"] = {}
         paths = self.content["paths"]
         if url not in paths:
             paths[url] = {}
         paths[url][http_method] = operation = {"operationId": operation_id}
+        if summary:
+            operation["summary"] = summary
         return Operation(operation)
 
     def to_yaml(self):

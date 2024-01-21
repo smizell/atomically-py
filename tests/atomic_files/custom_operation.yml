@@ -12,8 +12,8 @@ x-atomic:
       filters:
       - $ref: "#/components/parameters/Email"
       custom:
-        archive: {}
-        sort:
+        Archive: {}
+        Sort:
           type: collection
           requestSchema:
             $ref: "#/components/schemas/CustomerSort"
