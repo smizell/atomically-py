@@ -12,11 +12,38 @@ Write the smallest possible OpenAPI and generate the rest. Read more about this 
 
 ## Installation
 
+You can use pipx to install this tool.
+
+You can use `pipx` to install this tool.
+
+* [Install pipx](https://pipx.pypa.io/latest/installation/)
+* Run `pipx install atomically`
+
+You can also use `pip`:
+
+```bash
+pip install atomically
+```
+
 Install this library using `pip`:
 ```bash
 pip install atomically
 ```
 ## Usage
+
+### As CLI
+
+Run `atomically --help` to see all options.
+
+To generate an OpenAPI from from an atomic file, run:
+
+```sh
+atomically generate path-to-atomic-file.yml
+```
+
+Read the [Atomically repository](https://github.com/smizell/atomically-spec) to see how to write atomic files. Check the `tests/atomic_files` directory in this repo to see examples.
+
+### As Python library
 
 ```python
 from atomically import Atomically

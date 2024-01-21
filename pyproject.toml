@@ -1,13 +1,13 @@
 [project]
 name = "atomically"
-version = "0.1.1"
+version = "0.1.2"
 description = "Write the smallest possible OpenAPI and generate the rest"
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [{ name = "Stephen Mizell" }]
 license = { text = "Apache-2.0" }
 classifiers = ["License :: OSI Approved :: Apache Software License"]
-dependencies = ["inflection", "PyYAML"]
+dependencies = ["click", "inflection", "PyYAML"]
 
 [build-system]
 requires = ["setuptools"]
@@ -22,3 +22,6 @@ CI = "https://github.com/smizell/atomically/actions"
 
 [project.optional-dependencies]
 test = ["ipython", "pytest", "openapi-spec-validator", "snapshottest"]
+
+[project.scripts]
+atomically = "atomically.cli:cli"

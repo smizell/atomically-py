@@ -1,7 +1,8 @@
 import copy
+from urllib.parse import urlparse
+
 import inflection
 import yaml
-from urllib.parse import urlparse
 
 
 class Atomically:
