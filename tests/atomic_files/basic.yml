@@ -1,0 +1,30 @@
+openapi: 3.1.0
+info:
+  title: Example
+  description: Example
+  version: 1.0.0
+x-atomic:
+  version: 0.1.0
+  stacks:
+    Customer:
+      schema:
+        $ref: "#/components/schemas/Customer"
+      filters:
+      - $ref: "#/components/parameters/Email"
+components:
+  parameters:
+    Email:
+      in: query
+      name: email
+      schema:
+        type: string
+  schemas:
+    Customer:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        active:
+          type: boolean
