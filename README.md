@@ -25,10 +25,6 @@ You can also use `pip`:
 pip install atomically
 ```
 
-Install this library using `pip`:
-```bash
-pip install atomically
-```
 ## Usage
 
 ### As CLI
@@ -47,7 +43,6 @@ Read the [Atomically repository](https://github.com/smizell/atomically-spec) to 
 
 ```python
 from atomically import Atomically
-
 
 openapi = Atomically.from_file("atomically.yaml").generate()
 with open("openapi.yaml", "w") as f:
