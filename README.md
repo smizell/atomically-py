@@ -5,6 +5,9 @@
 [![Changelog](https://img.shields.io/github/v/release/smizell/atomically?include_prereleases&label=changelog)](https://github.com/smizell/atomically/releases)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/smizell/atomically/blob/main/LICENSE)
 
+> [!CAUTION]
+> This library is for experimenting and prototyping at this point and may change considerably until it reaches version 1.0.0. Please be cautious about relying on this library at this point.
+
 Write the smallest possible OpenAPI and generate the rest. Read more about this approach in the [Atomically repository](https://github.com/smizell/atomically-spec).
 
 ## Installation
