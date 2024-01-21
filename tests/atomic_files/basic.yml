@@ -3,7 +3,7 @@ info:
   title: Example
   description: Example
   version: 1.0.0
-x-atomic:
+x-atomically:
   version: 0.1.0
   stacks:
     Customer:

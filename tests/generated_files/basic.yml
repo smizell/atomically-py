@@ -256,7 +256,7 @@ paths:
       - Customer
 tags:
 - name: Customer
-x-atomic:
+x-atomically:
   stacks:
     Customer:
       filters:

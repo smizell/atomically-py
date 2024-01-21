@@ -413,7 +413,7 @@ snapshots['test_example_function[basic.yml] basic'] = {
             'name': 'Customer'
         }
     ],
-    'x-atomic': {
+    'x-atomically': {
         'stacks': {
             'Customer': {
                 'filters': [
@@ -969,7 +969,7 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
             'name': 'Customer'
         }
     ],
-    'x-atomic': {
+    'x-atomically': {
         'stacks': {
             'Customer': {
                 'custom': {

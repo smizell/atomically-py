@@ -243,7 +243,7 @@ class AtomicGenerator:
 class AtomicExt:
     def __init__(self, openapi):
         self.openapi = openapi
-        self.ext = openapi.get_ext("atomic") or {}
+        self.ext = openapi.get_ext("atomically") or {}
 
     def stacks(self):
         return [
