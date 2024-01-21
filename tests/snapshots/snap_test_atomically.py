@@ -208,16 +208,6 @@ snapshots['test_example_function[basic.yml] basic'] = {
                         },
                         'description': 'Client error'
                     },
-                    '404': {
-                        'content': {
-                            'application/json': {
-                                'schema': {
-                                    '$ref': '#/components/schemas/Error'
-                                }
-                            }
-                        },
-                        'description': 'Not found'
-                    },
                     '500': {
                         'content': {
                             'application/json': {
@@ -647,16 +637,6 @@ snapshots['test_example_function[custom_operation.yml] custom_operation'] = {
                             }
                         },
                         'description': 'Client error'
-                    },
-                    '404': {
-                        'content': {
-                            'application/json': {
-                                'schema': {
-                                    '$ref': '#/components/schemas/Error'
-                                }
-                            }
-                        },
-                        'description': 'Not found'
                     },
                     '500': {
                         'content': {

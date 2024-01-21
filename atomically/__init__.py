@@ -59,7 +59,9 @@ class AtomicGenerator:
                 create_operation.add_response_json_schema(
                     201, "Created", item_schema_ref
                 )
-                self._add_error_responses(openapi, create_operation)
+                self._add_error_responses(
+                    openapi, create_operation, supported_errors=[400, 500]
+                )
             if stack.is_supported("read"):
                 path_parameter_name = f"{stack.computer_name()}_id"
                 read_url = f"/{stack.computer_name_plural()}/{{{path_parameter_name}}}"
@@ -186,7 +188,9 @@ class AtomicGenerator:
             "required": ["items"],
         }
 
-    def _add_error_responses(self, openapi, operation):
+    def _add_error_responses(
+        self, openapi, operation, supported_errors=[400, 404, 500]
+    ):
         if not openapi.has_schema("Error"):
             openapi.add_schema(
                 "Error",
@@ -217,9 +221,12 @@ class AtomicGenerator:
                 },
             )
         error_schema_ref = {"$ref": "#/components/schemas/Error"}
-        operation.add_response_json_schema(400, "Client error", error_schema_ref)
-        operation.add_response_json_schema(404, "Not found", error_schema_ref)
-        operation.add_response_json_schema(500, "Server error", error_schema_ref)
+        if 400 in supported_errors:
+            operation.add_response_json_schema(400, "Client error", error_schema_ref)
+        if 404 in supported_errors:
+            operation.add_response_json_schema(404, "Not found", error_schema_ref)
+        if 500 in supported_errors:
+            operation.add_response_json_schema(500, "Server error", error_schema_ref)
 
 
 class AtomicExt:

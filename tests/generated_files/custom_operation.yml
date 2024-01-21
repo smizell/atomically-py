@@ -142,12 +142,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Client error
-        '404':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Not found
         '500':
           content:
             application/json:
