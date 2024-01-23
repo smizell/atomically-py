@@ -10,9 +10,40 @@
 
 Write the smallest possible OpenAPI and generate the rest. Read more about this approach in the [Atomically repository](https://github.com/smizell/atomically-spec).
 
-## Installation
+```yaml
+openapi: 3.1.0
+info:
+  title: Example
+  description: Example
+  version: 1.0.0
+x-atomically:
+  version: 0.1.0
+  stacks:
+    Customer:
+      schema:
+        $ref: "#/components/schemas/Customer"
+      filters:
+      - $ref: "#/components/parameters/Email"
+components:
+  parameters:
+    Email:
+      in: query
+      name: email
+      schema:
+        type: string
+  schemas:
+    Customer:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        active:
+          type: boolean
+```
 
-You can use pipx to install this tool.
+## Installation
 
 You can use `pipx` to install this tool.
 
